@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
+    @include('navigation')
       
     <div class="container p-5" >
         <div class="row">
@@ -14,45 +15,47 @@
         </div>
 
         <div class="row">
-            <form>
+            <form method="POST" action="{{route('reports.store')}}" >
+                @csrf
+                @method('POST')
                 <div class="mb-3">
                     <label for="firstNome" class="form-label">First Name:</label>
-                    <input type="text" class="form-control" id="firstNome" >                    
+                    <input type="text" class="form-control" id="firstNome" name="firstNome" >                    
                 </div>
 
                 <div class="mb-3">
                     <label for="lastNome" class="form-label">Last Name:</label>
-                    <input type="text" class="form-control" id="lastNome" >                    
+                    <input type="text" class="form-control" id="lastNome" name="lastNome">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">What is your e-mail address?</label>
-                    <input type="text" class="form-control" id="email" >                    
+                    <input type="text" class="form-control" id="email" name="email">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="when_happen" class="form-label">When did it happen?</label>
-                    <input type="text" class="form-control" id="when_happen" >                    
+                    <input type="text" class="form-control" id="when_happen" name="when_happen">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="how_long_gone" class="form-label">How long were you gone?</label>
-                    <input type="text" class="form-control" id="how_long_gone" >                    
+                    <input type="text" class="form-control" id="how_long_gone" name="how_long_gone">                    
                 </div>
 
                 <div class="mb-3">
-                    <label for="how_many_see" class="form-label">How many didi you see?</label>
-                    <input type="text" class="form-control" id="how_many_see" >                    
+                    <label for="how_many_see" class="form-label">How many did you see?</label>
+                    <input type="text" class="form-control" id="how_many_see" name="how_many_see">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="describe" class="form-label">Describe then:</label>
-                    <input type="text" class="form-control" id="describe" >                    
+                    <input type="text" class="form-control" id="describe" name="describe">                    
                 </div>
 
                 <div class="mb-3">
                     <label for="what_they_you" class="form-label">What did they do you?</label>
-                    <input type="text" class="form-control" id="what_they_you" >                    
+                    <input type="text" class="form-control" id="what_they_you" name="what_they_you">                    
                 </div>
 
                 <div class="mb-3">
@@ -70,7 +73,7 @@
 
                 <div class="mb-3">
                     <label for="comments" class="form-label">Anything else you want to add?</label>
-                    <input type="text" class="form-control" id="comments" >                    
+                    <textarea type="text" class="form-control" id="comments" name="comments"> </textarea>                   
                 </div>
                 <button type="submit" class="btn btn-primary">Report Abduction</button>
             </form>
